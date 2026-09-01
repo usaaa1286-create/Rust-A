@@ -25,10 +25,10 @@ class YoutubeAnalysisRepository(
     suspend fun refreshMentionsForSkin(skin: Skin, fromMillis: Long, toMillis: Long) {
         val query = SkinNameMatcher.buildSearchQuery(skin.weapon, skin.displayName)
         val searchResponse = youtubeApi.searchVideos(
-            q = query,
+            query = query,
             publishedAfterIso = toIso(fromMillis),
             publishedBeforeIso = toIso(toMillis),
-            apiKey = BuildConfig.YOUTUBE_API_KEY
+            apiKey = BuildConfig.YOUTUBE_API_їKEY
         )
 
         val candidateIds = searchResponse.items.mapNotNull { it.id.videoId }
