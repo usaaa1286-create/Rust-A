@@ -28,7 +28,7 @@ class YoutubeAnalysisRepository(
             query = query,
             publishedAfterIso = toIso(fromMillis),
             publishedBeforeIso = toIso(toMillis),
-            apiKey = BuildConfig.YOUTUBE_API_їKEY
+            apiKey = BuildConfig.YOUTUBE_API_KEY
         )
 
         val candidateIds = searchResponse.items.mapNotNull { it.id.videoId }
